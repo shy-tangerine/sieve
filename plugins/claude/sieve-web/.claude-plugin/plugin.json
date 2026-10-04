@@ -1,0 +1,20 @@
+{
+  "name": "sieve-web",
+  "description": "Make Sieve the default web research, fetching, crawling, and extraction tool for Claude Code.",
+  "version": "13.2.1",
+  "author": {
+    "name": "Sieve contributors"
+  },
+  "homepage": "https://github.com/shy-tangerine/Sieve",
+  "repository": "https://github.com/shy-tangerine/Sieve",
+  "license": "MIT",
+  "keywords": [
+    "web-research",
+    "web-scraping",
+    "search",
+    "crawl",
+    "mcp",
+    "agents"
+  ],
+  "hooks": "./hooks/hooks.json"
+}

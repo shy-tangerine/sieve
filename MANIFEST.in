@@ -1,0 +1,22 @@
+include CONTRIBUTING.md
+include docs/assets/sieve-terminal.cast docs/assets/sieve-terminal.gif
+recursive-include docs *.md *.webp
+exclude docs/identity-policy.md
+exclude docs/sponsorship.md
+prune docs/supporters
+prune scripts
+include scripts/architecture_report.py scripts/bench_v2.py scripts/check_public_tree.py
+include scripts/report_output.py
+include scripts/architecture_snapshot.json scripts/primitive_inventory.py scripts/primitive_inventory_snapshot.json
+include scripts/generate_docs_capabilities.py docs/capability-manifest.json
+include docs/adblock-data.json
+include scripts/generate_adblock_data.py scripts/install_codex_plugin.py scripts/validate_distribution.py
+include scripts/data/blocklistproject/ads.txt scripts/data/blocklistproject/tracking.txt scripts/data/blocklistproject/LICENSE
+include scripts/install.sh scripts/sieve-update
+exclude tests/test_check_public_sync.py tests/test_no_operator_crumbs.py
+exclude tests/test_public_release_audit.py tests/test_release_policy_adversarial.py
+exclude tests/test_bench.py tests/test_upstream_watch.py tests/test_workflow_gate.py
+recursive-include sieve/_skills *.md
+exclude docs/provenance-review-2026-10-03.md
+include scripts/build_attestation_material.py scripts/check_dependency_compatibility.py scripts/check_security_mutations.py scripts/check_typing_consumer.py
+include scripts/lint_contract.py scripts/lint_baseline.json scripts/lint_broad_except.py scripts/broad_except_baseline.txt

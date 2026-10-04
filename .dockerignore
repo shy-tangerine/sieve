@@ -1,0 +1,16 @@
+.git
+.github
+.venv
+.pytest_cache
+.repowise
+*.egg-info
+dist
+build
+tests
+wiki
+upstream
+.env*
+*.sqlite3
+*.db
+__pycache__
+*.py[cod]

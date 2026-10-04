@@ -1,0 +1,122 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    # Manual branch tests require an explicit dispatch by the repository owner.
+    if: github.actor == github.repository_owner
+    runs-on: [self-hosted, Linux, X64, local-ci]
+    timeout-minutes: 30
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
+        with:
+          enable-cache: true
+          cache-dependency-glob: uv.lock
+          python-version: ${{ matrix.python-version }}
+      - name: Verify the lockfile
+        run: uv lock --check
+      - name: Install the locked test environment
+        run: uv sync --locked --extra dev
+      - name: Check substantive lint findings against reviewed legacy sites
+        run: uv run --locked --extra dev python scripts/lint_contract.py
+      - name: Check supported Python contracts
+        run: uv run --locked --extra dev mypy
+      - name: Check broad exception boundaries
+        run: uv run --locked --extra dev python scripts/lint_broad_except.py
+      - run: uv run --locked --extra dev pytest -q
+      - name: Verify public repository boundary
+        run: |
+          if test -f scripts/export_public.py; then
+            uv run --locked --extra dev python scripts/export_public.py --check
+          else
+            uv run --locked --extra dev python scripts/check_public_tree.py
+          fi
+      - name: Verify architecture and public import surface
+        run: uv run --locked --extra dev python scripts/architecture_report.py --check --output "$RUNNER_TEMP/sieve-architecture.json"
+      - name: Verify direct primitive inventory
+        run: uv run --locked --extra dev python scripts/primitive_inventory.py --check
+      - name: Validate distribution metadata
+        run: uv run --locked --extra dev python scripts/validate_distribution.py
+      - name: Audit the locked dependency set
+        run: uv run --locked --extra dev pip-audit --desc=off
+
+  build:
+    needs: test
+    runs-on: [self-hosted, Linux, X64, local-ci]
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
+        with:
+          enable-cache: true
+          cache-dependency-glob: uv.lock
+          python-version: "3.13"
+      - run: uv lock --check
+      - run: uv sync --locked --extra dev
+      - run: uv build
+      - name: Check typing from an installed distribution
+        run: uv run --locked --extra dev python scripts/check_typing_consumer.py --wheel dist/*.whl --sdist dist/*.tar.gz
+      - run: uv run --locked --extra dev twine check dist/*
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: python-distributions
+          path: dist/*
+          if-no-files-found: error
+
+  dependency-compatibility:
+    if: github.actor == github.repository_owner
+    runs-on: [self-hosted, Linux, X64, local-ci]
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+        mode: [minimum, locked]
+        extra: [core, browser, pdf, ocr, ocr-legacy, rerank, stt, nlp, legacy-server]
+        exclude:
+          - python-version: "3.13"
+            extra: ocr-legacy
+            mode: minimum
+          - python-version: "3.13"
+            extra: ocr-legacy
+            mode: locked
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
+      - run: uv run --locked --extra dev python scripts/check_dependency_compatibility.py --python '${{ matrix.python-version }}' --mode '${{ matrix.mode }}' --extra '${{ matrix.extra }}'
+
+  wheel-pip-smoke:
+    needs: build
+    runs-on: [self-hosted, Linux, X64, local-ci]
+    timeout-minutes: 15
+    steps:
+      - uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
+        with:
+          python-version: "3.13"
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
+        with:
+          name: python-distributions
+          path: dist
+      - name: Install the built wheel with standard pip
+        run: |
+          uv venv --seed --python 3.13 "$RUNNER_TEMP/sieve-wheel-venv"
+          "$RUNNER_TEMP/sieve-wheel-venv/bin/python" -m pip install --upgrade pip
+          "$RUNNER_TEMP/sieve-wheel-venv/bin/python" -m pip install dist/*.whl
+          "$RUNNER_TEMP/sieve-wheel-venv/bin/python" -m pip check
+          test "$("$RUNNER_TEMP/sieve-wheel-venv/bin/sieve" --version)" = "Sieve $("$RUNNER_TEMP/sieve-wheel-venv/bin/python" -c 'import importlib.metadata as m; print(m.version("sieve-cli"))')"
+          "$RUNNER_TEMP/sieve-wheel-venv/bin/sieve" --help

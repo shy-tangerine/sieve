@@ -1,0 +1,32 @@
+{
+  "output": {
+    "entries": 373301,
+    "path": "sieve/data/adblock_domains.txt",
+    "sha256": "f058d37ced40eed7894025f43bd1a1d9167dcbe6e22382b3997921d194a3ab5e",
+    "size_bytes": 7925668
+  },
+  "schema_version": 1,
+  "source": {
+    "commit": "ee3bdbaddf49c756cf3340bb2e6a9dee5282d1c6",
+    "inputs": {
+      "ads.txt": {
+        "sha256": "bf23271a8dab547e6aeff1940d1a4d1263940c92fc3a5d1e299779a3ca712692",
+        "size_bytes": 6862355,
+        "url": "https://raw.githubusercontent.com/blocklistproject/Lists/ee3bdbaddf49c756cf3340bb2e6a9dee5282d1c6/ads.txt"
+      },
+      "tracking.txt": {
+        "sha256": "f1de1c81739ce2480b1dea890e9be6a1212008b19318b585102cc64e7013b0f1",
+        "size_bytes": 4215541,
+        "url": "https://raw.githubusercontent.com/blocklistproject/Lists/ee3bdbaddf49c756cf3340bb2e6a9dee5282d1c6/tracking.txt"
+      }
+    },
+    "license": {
+      "name": "Unlicense",
+      "sha256": "6b0382b16279f26ff69014300541967a356a666eb0b91b422f6862f6b7dad17e",
+      "size_bytes": 1211,
+      "url": "https://raw.githubusercontent.com/blocklistproject/Lists/ee3bdbaddf49c756cf3340bb2e6a9dee5282d1c6/LICENSE"
+    },
+    "repository": "https://github.com/blocklistproject/Lists",
+    "retrieved_on": "2026-10-02"
+  }
+}

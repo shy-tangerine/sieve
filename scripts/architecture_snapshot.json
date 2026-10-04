@@ -1,0 +1,943 @@
+{
+  "imports": {
+    "sieve.__init__": [
+      "sieve.arctic_shift",
+      "sieve.server"
+    ],
+    "sieve.__main__": [
+      "sieve.cli"
+    ],
+    "sieve._chunking": [],
+    "sieve._whisper": [],
+    "sieve.actions": [
+      "sieve.security"
+    ],
+    "sieve.adaptive": [
+      "sieve.dom_budget"
+    ],
+    "sieve.adblock": [],
+    "sieve.antibot_detector": [],
+    "sieve.api_backends": [
+      "sieve.search_metasearch",
+      "sieve.security"
+    ],
+    "sieve.arctic_shift": [],
+    "sieve.autothrottle": [],
+    "sieve.batch_extract": [
+      "sieve.public_output",
+      "sieve.resource_budget",
+      "sieve.security",
+      "sieve.server"
+    ],
+    "sieve.browser": [
+      "sieve.actions",
+      "sieve.adblock",
+      "sieve.browser_egress",
+      "sieve.fetcher",
+      "sieve.network_capture",
+      "sieve.resource_budget",
+      "sieve.security",
+      "sieve.session_coherence"
+    ],
+    "sieve.browser_egress": [
+      "sieve.security"
+    ],
+    "sieve.browser_sessions": [
+      "sieve.browser",
+      "sieve.security"
+    ],
+    "sieve.byok_config": [],
+    "sieve.cache": [],
+    "sieve.capabilities": [],
+    "sieve.chunking": [
+      "sieve.semchunk"
+    ],
+    "sieve.cli": [
+      "sieve",
+      "sieve.batch_extract",
+      "sieve.browser",
+      "sieve.byok_config",
+      "sieve.image_search",
+      "sieve.integrations",
+      "sieve.mcp_stdio",
+      "sieve.osint",
+      "sieve.pipeline",
+      "sieve.public_output",
+      "sieve.schema_gen",
+      "sieve.server",
+      "sieve.setup",
+      "sieve.social",
+      "sieve.youtube"
+    ],
+    "sieve.cli_ui": [],
+    "sieve.command_router": [
+      "sieve.antibot_detector",
+      "sieve.byok_config",
+      "sieve.datadome_bridge",
+      "sieve.extraction",
+      "sieve.profile_identity",
+      "sieve.proxy_health",
+      "sieve.public_output",
+      "sieve.research_sources",
+      "sieve.schema_gen",
+      "sieve.security",
+      "sieve.session_coherence",
+      "sieve.sitemap_harvest",
+      "sieve.sleeper_bridge"
+    ],
+    "sieve.config": [
+      "sieve.public_output",
+      "sieve.security"
+    ],
+    "sieve.content_type": [],
+    "sieve.crawl": [
+      "sieve.autothrottle",
+      "sieve.focus",
+      "sieve.public_output",
+      "sieve.resource_budget",
+      "sieve.search_proxy",
+      "sieve.security",
+      "sieve.server",
+      "sieve.sitemap",
+      "sieve.trafilatura_extractor",
+      "sieve.url_policy"
+    ],
+    "sieve.datadome_bridge": [],
+    "sieve.dom_budget": [
+      "sieve.resource_budget"
+    ],
+    "sieve.domain_discovery": [
+      "sieve.security",
+      "sieve.sitemap",
+      "sieve.url_policy"
+    ],
+    "sieve.envelope": [
+      "sieve.content_type",
+      "sieve.url_policy"
+    ],
+    "sieve.extraction": [
+      "sieve.dom_budget",
+      "sieve.resource_budget"
+    ],
+    "sieve.extractor": [
+      "sieve.pruning",
+      "sieve.trafilatura_extractor"
+    ],
+    "sieve.fetcher": [
+      "sieve",
+      "sieve.resource_budget",
+      "sieve.security",
+      "sieve.session_coherence"
+    ],
+    "sieve.focus": [],
+    "sieve.image_search": [
+      "sieve.byok_config",
+      "sieve.security",
+      "sieve.url_policy"
+    ],
+    "sieve.integrations": [
+      "sieve.security"
+    ],
+    "sieve.links": [
+      "sieve.dom_budget",
+      "sieve.url_policy"
+    ],
+    "sieve.mcp_stdio": [
+      "sieve.server"
+    ],
+    "sieve.metadata": [
+      "sieve.dom_budget"
+    ],
+    "sieve.network_capture": [
+      "sieve.content_type"
+    ],
+    "sieve.ocr": [
+      "sieve.pdf_extractor",
+      "sieve.public_output"
+    ],
+    "sieve.osint": [],
+    "sieve.pdf_extractor": [
+      "sieve.ocr",
+      "sieve.public_output"
+    ],
+    "sieve.pipeline": [
+      "sieve.public_output",
+      "sieve.resource_budget",
+      "sieve.security"
+    ],
+    "sieve.profile_identity": [],
+    "sieve.proxy_health": [],
+    "sieve.pruning": [
+      "sieve.dom_budget"
+    ],
+    "sieve.public_output": [],
+    "sieve.reddit": [
+      "sieve.security"
+    ],
+    "sieve.reddit_rss": [],
+    "sieve.reranker": [],
+    "sieve.research_sources": [
+      "sieve.arctic_shift",
+      "sieve.reddit_rss"
+    ],
+    "sieve.resource_budget": [],
+    "sieve.response_translation": [
+      "sieve.content_type",
+      "sieve.dom_budget",
+      "sieve.envelope",
+      "sieve.extractor",
+      "sieve.links",
+      "sieve.metadata",
+      "sieve.network_capture",
+      "sieve.ocr",
+      "sieve.pdf_extractor",
+      "sieve.public_output",
+      "sieve.reddit",
+      "sieve.resource_budget",
+      "sieve.trafilatura_extractor"
+    ],
+    "sieve.retrieval": [],
+    "sieve.robots": [
+      "sieve.fetcher"
+    ],
+    "sieve.sanitize": [],
+    "sieve.schema_gen": [
+      "sieve.public_output"
+    ],
+    "sieve.scorers": [],
+    "sieve.script_harvest": [],
+    "sieve.sdk": [
+      "sieve.batch_extract",
+      "sieve.osint",
+      "sieve.public_output",
+      "sieve.server",
+      "sieve.session_coherence"
+    ],
+    "sieve.search": [
+      "sieve.cache",
+      "sieve.public_output",
+      "sieve.reranker",
+      "sieve.search_api_keys",
+      "sieve.search_engines",
+      "sieve.search_proxy",
+      "sieve.security"
+    ],
+    "sieve.search_api_keys": [
+      "sieve.api_backends",
+      "sieve.byok_config",
+      "sieve.search_metasearch",
+      "sieve.security"
+    ],
+    "sieve.search_engines": [
+      "sieve.fetcher",
+      "sieve.search_metasearch",
+      "sieve.url_policy"
+    ],
+    "sieve.search_metasearch": [
+      "sieve.api_backends",
+      "sieve.search_api_keys",
+      "sieve.search_proxy",
+      "sieve.session_coherence",
+      "sieve.url_policy"
+    ],
+    "sieve.search_proxy": [],
+    "sieve.security": [],
+    "sieve.selectors": [],
+    "sieve.semchunk": [],
+    "sieve.server": [
+      "sieve",
+      "sieve.actions",
+      "sieve.antibot_detector",
+      "sieve.browser",
+      "sieve.browser_sessions",
+      "sieve.byok_config",
+      "sieve.cache",
+      "sieve.chunking",
+      "sieve.command_router",
+      "sieve.content_type",
+      "sieve.dom_budget",
+      "sieve.domain_discovery",
+      "sieve.envelope",
+      "sieve.extraction",
+      "sieve.fetcher",
+      "sieve.focus",
+      "sieve.public_output",
+      "sieve.resource_budget",
+      "sieve.response_translation",
+      "sieve.robots",
+      "sieve.search",
+      "sieve.search_proxy",
+      "sieve.security",
+      "sieve.server_fetch",
+      "sieve.server_search",
+      "sieve.similar",
+      "sieve.sleeper_bridge",
+      "sieve.smart_extract",
+      "sieve.social",
+      "sieve.tables"
+    ],
+    "sieve.server_fetch": [
+      "sieve",
+      "sieve.actions",
+      "sieve.browser",
+      "sieve.cache",
+      "sieve.config",
+      "sieve.fetcher",
+      "sieve.public_output",
+      "sieve.reddit",
+      "sieve.resource_budget",
+      "sieve.retrieval",
+      "sieve.robots",
+      "sieve.security",
+      "sieve.sleeper_bridge"
+    ],
+    "sieve.server_search": [
+      "sieve.cache",
+      "sieve.crawl",
+      "sieve.public_output",
+      "sieve.search",
+      "sieve.security"
+    ],
+    "sieve.session_coherence": [],
+    "sieve.setup": [
+      "sieve.byok_config",
+      "sieve.capabilities",
+      "sieve.config"
+    ],
+    "sieve.similar": [
+      "sieve.dom_budget"
+    ],
+    "sieve.sitemap": [
+      "sieve.resource_budget"
+    ],
+    "sieve.sitemap_harvest": [
+      "sieve.sitemap"
+    ],
+    "sieve.sleeper_bridge": [
+      "sieve.config"
+    ],
+    "sieve.smart_extract": [
+      "sieve.byok_config"
+    ],
+    "sieve.social": [
+      "sieve.config"
+    ],
+    "sieve.stt": [
+      "sieve.public_output",
+      "sieve.security"
+    ],
+    "sieve.tables": [
+      "sieve.dom_budget"
+    ],
+    "sieve.trafilatura_extractor": [
+      "sieve.pruning",
+      "sieve.public_output",
+      "sieve.script_harvest"
+    ],
+    "sieve.updater": [
+      "sieve",
+      "sieve.byok_config",
+      "sieve.search_proxy"
+    ],
+    "sieve.url_policy": [
+      "sieve.public_output",
+      "sieve.security"
+    ],
+    "sieve.urlfilters": [
+      "sieve.content_type"
+    ],
+    "sieve.youtube": [
+      "sieve.security"
+    ]
+  },
+  "public": {
+    "sieve.__init__": [
+      "MasterFetchServer",
+      "ResponseModel",
+      "BulkResponseModel",
+      "ArticleModel",
+      "SessionInfo",
+      "SessionCreatedModel",
+      "SessionClosedModel",
+      "CacheInfoModel",
+      "main",
+      "ArcticShiftClient",
+      "ArcticShiftResponse",
+      "ArcticShiftItem",
+      "ArcticShiftPage"
+    ],
+    "sieve.__main__": [],
+    "sieve._chunking": [
+      "ChunkingStrategy"
+    ],
+    "sieve._whisper": [
+      "WhisperUnavailableError",
+      "run"
+    ],
+    "sieve.actions": [
+      "ActionResult",
+      "build_page_action"
+    ],
+    "sieve.adaptive": [
+      "relocate"
+    ],
+    "sieve.adblock": [
+      "is_ad_url",
+      "should_block_host",
+      "should_block_url"
+    ],
+    "sieve.antibot_detector": [
+      "detect_block"
+    ],
+    "sieve.api_backends": [
+      "BaseAPIEngine",
+      "GitHubSearchEngine",
+      "HackerNewsEngine",
+      "SemanticScholarEngine"
+    ],
+    "sieve.arctic_shift": [
+      "ARCTIC_SHIFT_API_METADATA",
+      "ARCTIC_SHIFT_API_VERSION",
+      "ARCTIC_SHIFT_BASE_URL",
+      "ArcticShiftClient",
+      "ArcticShiftError",
+      "ArcticShiftHTTPError",
+      "ArcticShiftTransportError",
+      "ArcticShiftResponse",
+      "ArcticShiftItem",
+      "ArcticShiftPage"
+    ],
+    "sieve.autothrottle": [
+      "AutoThrottle",
+      "parse_retry_after"
+    ],
+    "sieve.batch_extract": [
+      "BatchRecord",
+      "read_urls",
+      "run_batch"
+    ],
+    "sieve.browser": [
+      "BrowserSession",
+      "DynamicBrowser",
+      "StealthyBrowser",
+      "browser_import_error",
+      "check_browser_available",
+      "is_browser_available_cached"
+    ],
+    "sieve.browser_egress": [
+      "BrowserEgress"
+    ],
+    "sieve.browser_sessions": [
+      "BrowserSessionRegistry",
+      "OpenedSession",
+      "SessionEntry",
+      "SessionType"
+    ],
+    "sieve.byok_config": [
+      "add_key",
+      "clear_all_keys",
+      "get_llm_key",
+      "has_byok_keys",
+      "list_keys",
+      "load_byok_keys",
+      "redact_key",
+      "remove_key",
+      "save_byok_keys"
+    ],
+    "sieve.cache": [
+      "clear_all_cache",
+      "clear_cache",
+      "get_cached",
+      "set_cached"
+    ],
+    "sieve.capabilities": [
+      "detect"
+    ],
+    "sieve.chunking": [
+      "IdentityChunking",
+      "RegexChunking",
+      "NltkSentenceChunking",
+      "chunk_text"
+    ],
+    "sieve.cli": [
+      "main"
+    ],
+    "sieve.cli_ui": [
+      "branded",
+      "cmd",
+      "cyan",
+      "dim",
+      "err",
+      "lr",
+      "magenta",
+      "ok",
+      "panel",
+      "red",
+      "ver",
+      "ver_transition",
+      "warn",
+      "wordmark"
+    ],
+    "sieve.command_router": [
+      "Capability",
+      "CapabilityRouter"
+    ],
+    "sieve.config": [
+      "get",
+      "load",
+      "peek_diagnostics",
+      "save",
+      "take_diagnostics"
+    ],
+    "sieve.content_type": [
+      "ParsedContentType",
+      "parse_content_type",
+      "media_type_of",
+      "charset_of",
+      "is_json_media",
+      "is_pdf_media",
+      "is_image_media",
+      "classify_media"
+    ],
+    "sieve.crawl": [
+      "CrawlPage",
+      "CrawlResponseModel",
+      "extract_same_domain_links",
+      "normalize_url",
+      "score_link",
+      "smart_crawl"
+    ],
+    "sieve.datadome_bridge": [
+      "cookie_header",
+      "harvest_plan",
+      "match_impersonation",
+      "replay_fetch"
+    ],
+    "sieve.dom_budget": [
+      "DomWorkBudget",
+      "measure_tree",
+      "DomMetrics"
+    ],
+    "sieve.domain_discovery": [
+      "DiscoveryResult",
+      "discover_domains_sync"
+    ],
+    "sieve.envelope": [
+      "classify_source",
+      "compute_freshness",
+      "detect_page_type",
+      "page_type_from_error"
+    ],
+    "sieve.extraction": [
+      "extract_json",
+      "extract_jsonl",
+      "validate_schema",
+      "normalize_schema",
+      "parse_relaxed_json"
+    ],
+    "sieve.extractor": [
+      "extract_content",
+      "extract_html_content",
+      "extract_text_content"
+    ],
+    "sieve.fetcher": [
+      "ElementWrapper",
+      "HTTPSession",
+      "Response",
+      "http_get",
+      "response_from_browser_page",
+      "search_proxy"
+    ],
+    "sieve.focus": [
+      "focus_content"
+    ],
+    "sieve.image_search": [
+      "ImageResult",
+      "ImageSearchResponse",
+      "search_images"
+    ],
+    "sieve.integrations": [
+      "IntegrationError",
+      "invoke_integration",
+      "load_integrations",
+      "route_integration",
+      "scaffold_integration",
+      "validate_integration"
+    ],
+    "sieve.links": [
+      "extract_links"
+    ],
+    "sieve.mcp_stdio": [
+      "handle_mcp_argv",
+      "main",
+      "run_http",
+      "run_stdio"
+    ],
+    "sieve.metadata": [
+      "extract_image_urls",
+      "extract_metadata",
+      "extract_structured_data"
+    ],
+    "sieve.network_capture": [
+      "analyze_fragment",
+      "build_network_field",
+      "count_placeholder_containers",
+      "detect_ajax_shell",
+      "fragment_text",
+      "is_animation_payload",
+      "is_consent_payload",
+      "is_tracker_url",
+      "rank_fragments",
+      "score_fragment",
+      "script_data",
+      "should_capture"
+    ],
+    "sieve.ocr": [
+      "ocr_available",
+      "ocr_image_bytes",
+      "ocr_pdf"
+    ],
+    "sieve.osint": [
+      "OSINTError",
+      "run_maigret"
+    ],
+    "sieve.pdf_extractor": [
+      "PdfResult",
+      "extract_pdf"
+    ],
+    "sieve.pipeline": [
+      "run_pipeline",
+      "select_search_results",
+      "validate_spec"
+    ],
+    "sieve.profile_identity": [
+      "fingerprint_summary",
+      "generate_identity",
+      "identities_match",
+      "rotate"
+    ],
+    "sieve.proxy_health": [
+      "ProxyHealth",
+      "ProxyPool"
+    ],
+    "sieve.pruning": [
+      "prune_html",
+      "filter_content"
+    ],
+    "sieve.public_output": [
+      "redact_secrets",
+      "bounded_json_dumps",
+      "safe_public_json",
+      "safe_error",
+      "MAX_PUBLIC_OUTPUT_BYTES"
+    ],
+    "sieve.reddit": [
+      "is_reddit_url",
+      "parse_old_reddit_listing",
+      "rewrite_to_old_reddit"
+    ],
+    "sieve.reddit_rss": [
+      "RSSFetchError",
+      "RedditRSSRecord",
+      "feed_url",
+      "fetch_reddit_rss",
+      "parse_reddit_rss"
+    ],
+    "sieve.reranker": [
+      "ensure_reranker",
+      "get_reranker",
+      "model_present",
+      "prewarm_reranker",
+      "rerank",
+      "unavailable_reason"
+    ],
+    "sieve.research_sources": [
+      "SourceRecord",
+      "SourceIngestResponse",
+      "ingest_source"
+    ],
+    "sieve.resource_budget": [
+      "BudgetExceeded",
+      "ResourceBudget",
+      "bound_output",
+      "budget_scope",
+      "budgeted",
+      "budgeted_collection",
+      "current_budget"
+    ],
+    "sieve.response_translation": [
+      "translate_response"
+    ],
+    "sieve.retrieval": [
+      "BrowserRetrievalAdapter",
+      "HTTPRetrievalAdapter",
+      "InMemoryRetrievalAdapter",
+      "RetrievalAdapter"
+    ],
+    "sieve.robots": [
+      "clear_robots_cache",
+      "is_allowed",
+      "is_allowed_strict",
+      "robots_policy"
+    ],
+    "sieve.sanitize": [
+      "strip_noise_tags",
+      "sanitize_for_ai",
+      "sanitize_html"
+    ],
+    "sieve.schema_gen": [
+      "generate_schema",
+      "generate_schema_from_url",
+      "schema_to_jsonl_docs",
+      "parse_schema_json",
+      "_build_prompt"
+    ],
+    "sieve.scorers": [
+      "ScoringStats",
+      "Scorer",
+      "URLScorer",
+      "CompositeScorer",
+      "KeywordRelevanceScorer",
+      "PathDepthScorer",
+      "ContentTypeScorer",
+      "FreshnessScorer",
+      "DomainAuthorityScorer",
+      "ScoreResult",
+      "score_urls"
+    ],
+    "sieve.script_harvest": [
+      "extract_from_script_tags",
+      "harvest_script_json",
+      "minify_html",
+      "cleanup_html",
+      "convert_to_md"
+    ],
+    "sieve.sdk": [
+      "BatchRecord",
+      "ClientLimits",
+      "SieveBackend",
+      "SieveClient",
+      "SieveError"
+    ],
+    "sieve.search": [
+      "SearchResponseModel",
+      "SearchResult",
+      "compute_fetch_hint",
+      "ensure_reranker",
+      "get_reranker",
+      "neural_rerank",
+      "smart_search",
+      "unavailable_reason"
+    ],
+    "sieve.search_api_keys": [
+      "BaseBYOKEngine",
+      "ExaEngine",
+      "FirecrawlEngine",
+      "KeyPool",
+      "SerperEngine",
+      "TavilyEngine",
+      "TinyFishEngine",
+      "get_byok_engines"
+    ],
+    "sieve.search_engines": [
+      "EngineReport",
+      "RawResult",
+      "close_search_engines",
+      "fetch_source_for_similar",
+      "multi_search",
+      "normalize_url",
+      "prewarm_search_engines"
+    ],
+    "sieve.search_metasearch": [
+      "BaseSearchEngine",
+      "Bing",
+      "Brave",
+      "Duckduckgo",
+      "Google",
+      "Grokipedia",
+      "MetaBlockedException",
+      "MetaSearchException",
+      "MetaTimeoutException",
+      "Mojeek",
+      "Qwant",
+      "Startpage",
+      "TextResult",
+      "Wikipedia",
+      "Yahoo",
+      "Yandex",
+      "metasearch"
+    ],
+    "sieve.search_proxy": [
+      "ProxyPool",
+      "add_proxy",
+      "clear_proxies",
+      "get_next_proxy",
+      "get_proxy_pool",
+      "list_proxies",
+      "load_proxies",
+      "redact_proxy",
+      "remove_proxy",
+      "reset_pool",
+      "save_proxies"
+    ],
+    "sieve.security": [
+      "SecurityError",
+      "atomic_write_bytes",
+      "bounded_number",
+      "is_forbidden_ip",
+      "redact_api_key",
+      "redact_secret",
+      "redact_url_for_logs",
+      "resolve_and_check",
+      "validate_cdp_url",
+      "validate_css_selector",
+      "validate_headers",
+      "validate_proxy",
+      "validate_search_query",
+      "validate_timeout",
+      "validate_url"
+    ],
+    "sieve.selectors": [
+      "generate_css_selector",
+      "generate_full_css_selector",
+      "generate_xpath_selector",
+      "generate_full_xpath_selector",
+      "selector_hint"
+    ],
+    "sieve.semchunk": [
+      "SemanticChunking"
+    ],
+    "sieve.server": [
+      "ArticleModel",
+      "BulkResponseModel",
+      "CacheInfoModel",
+      "MasterFetchServer",
+      "ResponseModel",
+      "SessionClosedModel",
+      "SessionCreatedModel",
+      "SessionInfo",
+      "VersionInfoModel",
+      "main"
+    ],
+    "sieve.server_fetch": [
+      "bulk_fetch",
+      "bulk_get",
+      "bulk_stealthy_fetch",
+      "fetch",
+      "get",
+      "smart_fetch",
+      "stealthy_fetch"
+    ],
+    "sieve.server_search": [
+      "smart_crawl",
+      "smart_search"
+    ],
+    "sieve.session_coherence": [
+      "human_delay",
+      "warmup_sequence",
+      "SessionProfile",
+      "SessionStore",
+      "set_rng",
+      "current_rng"
+    ],
+    "sieve.setup": [
+      "install_skills",
+      "run_setup",
+      "run_skill_command"
+    ],
+    "sieve.similar": [
+      "find_similar"
+    ],
+    "sieve.sitemap": [
+      "SitemapParseResult",
+      "SitemapResult",
+      "SitemapURL",
+      "discover_sitemap",
+      "parse_sitemap",
+      "parse_sitemap_detailed"
+    ],
+    "sieve.sitemap_harvest": [
+      "fetch_url",
+      "harvest_gig_urls",
+      "harvest_urls"
+    ],
+    "sieve.sleeper_bridge": [
+      "is_available",
+      "sleeper_api",
+      "sleeper_fetch",
+      "sleeper_shot",
+      "tabs"
+    ],
+    "sieve.smart_extract": [
+      "SmartExtractError",
+      "smart_extract"
+    ],
+    "sieve.social": [
+      "collect_browser",
+      "comments",
+      "comments_browser",
+      "extract_profile_corpus",
+      "extract_profile_items",
+      "fetch",
+      "fetch_browser",
+      "normalize",
+      "parse_browser_comments",
+      "platform_for_url",
+      "resolve_browser_backend"
+    ],
+    "sieve.stt": [
+      "STTError",
+      "effective_timeout",
+      "transcribe"
+    ],
+    "sieve.tables": [
+      "extract_tables",
+      "extract_table_data"
+    ],
+    "sieve.trafilatura_extractor": [
+      "extract_with_trafilatura",
+      "extract_content_from_html",
+      "extract_html_title",
+      "convert_links_to_citations",
+      "to_fit_markdown"
+    ],
+    "sieve.updater": [
+      "check_version",
+      "pad_version",
+      "do_update",
+      "reinstall",
+      "print_version",
+      "doctor",
+      "rollback",
+      "cleanup_old_launcher",
+      "repair_script_path",
+      "check_release",
+      "update_command",
+      "release_summary"
+    ],
+    "sieve.url_policy": [
+      "dedupe_url",
+      "display_url",
+      "fetch_url",
+      "hostname",
+      "same_domain"
+    ],
+    "sieve.urlfilters": [
+      "URLFilter",
+      "FilterChain",
+      "URLPatternFilter",
+      "DomainFilter",
+      "ContentTypeFilter",
+      "ContentRelevanceFilter"
+    ],
+    "sieve.youtube": [
+      "YouTubeFetchError",
+      "classify_error",
+      "download",
+      "metadata",
+      "resolve_urls",
+      "search"
+    ]
+  },
+  "schema_version": 1
+}

@@ -1,0 +1,71 @@
+name: Bug report
+description: Report a reproducible problem with Sieve
+title: "bug: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please search existing issues first. Never include credentials, cookies,
+        private URLs, browser profiles, or personal data.
+  - type: input
+    id: version
+    attributes:
+      label: Sieve version
+      description: Output of `sieve --version` from the environment that failed.
+      placeholder: Sieve 13.2.1
+    validations:
+      required: true
+  - type: input
+    id: command
+    attributes:
+      label: Command
+      description: The redacted command or integration call that shows the problem.
+      placeholder: sieve fetch https://example.com --timeout 10
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: List the smallest sequence of steps and safe inputs that reproduces the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect Sieve to return or do?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What happened instead? Include the exit status and relevant JSON fields.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Redacted output
+      description: Paste the relevant stdout/stderr. Remove secrets, cookies, tokens, and personal data.
+      render: text
+  - type: textarea
+    id: context
+    attributes:
+      label: Environment
+      description: Include Python version, operating system, installed extras, and browser or MCP integration if relevant.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues and found no duplicate.
+          required: true
+        - label: I removed credentials, cookies, private URLs, and personal data.
+          required: true

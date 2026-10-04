@@ -1,0 +1,58 @@
+# Local environments and generated state
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.hypothesis/
+.mypy_cache/
+.ruff_cache/
+.upstream-watch-state.json
+.upstream-watch-config.json
+/UPSTREAM-WATCH.md
+REVISION_NOTES.md
+*.egg-info/
+
+# Local credentials, caches, and browser data
+.env
+.env.*
+!.env.example
+/.sieve/
+.master_fetch_cache/
+*.sqlite3
+*.db
+
+# OS/editor files
+.DS_Store
+.idea/
+.vscode/
+
+# Local agent and code-intelligence state can contain workstation paths and
+# indexed source copies; it must never be tracked.
+/.claude/
+/.codebase-memory/
+/.mcp.json
+/.repowise/
+/.repowise-workspace.yaml
+/.opencodereview/
+
+# Local upstream source snapshots used for compatibility audits
+/upstream/
+# Private maintainer notes and review evidence; retain rather than clean.
+/wiki/
+/dist/
+/build/
+/benchmarks/results/
+/findings.bandit.json
+
+# Workstation-local agent platform state (third-party tooling)
+/.freebuff/
+
+# Local cron/systemd wrappers and operator unit files
+/scripts/hermes/
+/scripts/check_upstreams.py
+/scripts/sieve-upstream-watch.py
+/.config/systemd/
+/sieve.service
+
+# Local copies of skills that ship from sieve/_skills/ (canonical source)
+/skills/

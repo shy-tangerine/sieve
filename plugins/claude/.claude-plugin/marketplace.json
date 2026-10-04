@@ -1,0 +1,19 @@
+{
+  "name": "sieve",
+  "metadata": {
+    "description": "Sieve integrations for agent-first web research and scraping"
+  },
+  "owner": {
+    "name": "Sieve contributors"
+  },
+  "plugins": [
+    {
+      "name": "sieve-web",
+      "version": "13.2.1",
+      "source": "./sieve-web",
+      "description": "Make Sieve the default web research, fetching, crawling, and extraction tool for Claude Code.",
+      "category": "Productivity",
+      "tags": ["web-research", "scraping", "search", "agents"]
+    }
+  ]
+}

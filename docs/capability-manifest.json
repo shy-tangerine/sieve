@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "tools": {
+    "detect_block": {
+      "definition_sha256": "867c41dbe99922c5e57ec49d94e1708f7f50ce46fa208120b8581b796ead703c",
+      "required_extras": []
+    },
+    "extract": {
+      "definition_sha256": "b9ddc41d9145c709edec546c16b9263601c367d22dee697b6752d4190062f22f",
+      "required_extras": []
+    },
+    "extract_jsonl": {
+      "definition_sha256": "b4e5d8c6ab635354e9782d0848e095bcd9666fb788c4bb810dd2e50b1a239260",
+      "required_extras": []
+    },
+    "research_ingest": {
+      "definition_sha256": "88d79313da4a530efe6a7e4e38eb5a589a9b3364f868119052120c2abf932174",
+      "required_extras": []
+    },
+    "schema_gen": {
+      "definition_sha256": "7bc4a695d249922b2714b8d2b3f657ea1f743e985b2cbfe2925772b370a8eb80",
+      "required_extras": []
+    },
+    "screenshot": {
+      "definition_sha256": "c50e6088c0072a972557e562263d8e8696e50f7aec9f5a3c7ebebe37d7be6149",
+      "required_extras": [
+        "browser"
+      ]
+    },
+    "sitemap_harvest": {
+      "definition_sha256": "ac8952873dca8dc438bd0da7c2a878eb2d7a19fe264e48e2317ffa3b6e74c801",
+      "required_extras": []
+    },
+    "smart_crawl": {
+      "definition_sha256": "a0894604143191f40174b6653b01780fa62fef979ccc70e77863a1c122948d87",
+      "required_extras": []
+    },
+    "smart_fetch": {
+      "definition_sha256": "eb4479e3d8955c7127e374ea226581468f16d3bc02f42b2676663006beb8af35",
+      "required_extras": []
+    },
+    "smart_search": {
+      "definition_sha256": "45f7d444b4f75a313e87694c54cfee1b0b80f2eb59d52e20cd24a34c75c786ad",
+      "required_extras": []
+    }
+  }
+}

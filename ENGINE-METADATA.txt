@@ -1,0 +1,6 @@
+Sieve engine metadata
+=====================
+
+This repository uses pyproject.toml as its canonical package metadata. This
+file is a human-readable provenance marker and intentionally contains no
+upstream maintainer contact data or generated package metadata.

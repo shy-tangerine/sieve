@@ -1,0 +1,38 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.shy-tangerine/sieve",
+  "description": "Local web research for AI agents through a low-token CLI and MCP transport, with optional BYOK and browser-backed capabilities.",
+  "title": "Sieve",
+  "repository": {
+    "url": "https://github.com/shy-tangerine/Sieve",
+    "source": "github"
+  },
+  "version": "13.2.1",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "registryBaseUrl": "https://pypi.org",
+      "identifier": "sieve-cli",
+      "version": "13.2.1",
+      "runtimeHint": "uvx",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "type": "positional",
+          "value": "serve"
+        },
+        {
+          "type": "named",
+          "name": "--transport",
+          "value": "stdio"
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}

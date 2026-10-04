@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+# Topgrade-friendly seam: checks only and never applies an update.
+set -eu
+exec sieve update check --json

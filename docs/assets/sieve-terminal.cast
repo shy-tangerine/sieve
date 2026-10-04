@@ -1,0 +1,8 @@
+{"version": 2, "width": 100, "height": 24, "timestamp": 1791047313, "env": {"TERM": "dumb"}, "title": "Sieve: real example.com fetch, extract and crawl"}
+[0.051994, "o", "✦ SIEVE  /  one bounded research tool\r\nfixture  https://example.com  (stable public fixture)\r\n\r\n① fetch\r\n"]
+[0.238246, "o", "  https://example.com  156 chars  This domain is for use in documentation examples without needing permission. This is not a service; \r\n\r\n"]
+[5.238335, "o", "② extract\r\n"]
+[6.775731, "o", "  {\"url\": \"https://example.com\", \"status\": 200, \"content_ok\": true, \"blocked\": {\"blocked\": false, \"reason\": null, \"kind\": null}, \"items\": [{\"text\": \"This domain is for use in documen\r\n\r\n"]
+[11.77583, "o", "③ crawl\r\n"]
+[12.834226, "o", "  1 pages  https://example.com/\r\n\r\n"]
+[17.83433, "o", "ready  fetch → extract → crawl  |  all output remains JSON\r\n"]

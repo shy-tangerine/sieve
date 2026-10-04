@@ -1,0 +1,29 @@
+{
+  "name": "sieve-web-research",
+  "version": "13.2.1",
+  "description": "Make Sieve the default local engine for web search, page reading, crawling, and structured extraction.",
+  "author": {
+    "name": "Sieve contributors",
+    "url": "https://github.com/shy-tangerine/Sieve"
+  },
+  "homepage": "https://github.com/shy-tangerine/Sieve",
+  "repository": "https://github.com/shy-tangerine/Sieve",
+  "license": "MIT",
+  "keywords": ["web search", "scraping", "crawl", "extract", "research"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Sieve Web Research",
+    "shortDescription": "Search and scrape through Sieve first",
+    "longDescription": "Routes ordinary web research through Sieve's keyless CLI. It uses bounded JSON output, preserves source URLs for citations, and falls back only when Sieve lacks the requested capability or cannot complete the operation.",
+    "developerName": "Sieve contributors",
+    "category": "Research",
+    "capabilities": ["Search", "Fetch", "Crawl", "Extract"],
+    "websiteURL": "https://github.com/shy-tangerine/Sieve",
+    "defaultPrompt": [
+      "Research this topic with Sieve and cite the source URLs.",
+      "Fetch and summarize this page with Sieve.",
+      "Crawl this documentation site for the relevant pages."
+    ],
+    "brandColor": "#1F6FEB"
+  }
+}

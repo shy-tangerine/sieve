@@ -1,0 +1,15 @@
+{
+  "description": "Adds Sieve-first web research routing at session start.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/session-start.py\""
+          }
+        ]
+      }
+    ]
+  }
+}

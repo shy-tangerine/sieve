@@ -1,0 +1,46 @@
+name: Feature request
+description: Propose a focused improvement to Sieve
+title: "feature: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Focus proposals on a concrete user workflow. Examples of commands and
+        JSON output make a request easier to evaluate.
+  - type: textarea
+    id: problem
+    attributes:
+      label: User problem
+      description: Who is affected, and what workflow is currently missing, slow, or difficult?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the smallest useful behavior. Include an example command, MCP tool call, or JSON result when helpful.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: What workarounds or existing commands did you try?
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and constraints
+      description: Note performance, output shape, optional dependency, compatibility, or access-policy constraints.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I researched open AND closed issues/PRs and linked what I found (mandatory per CONTRIBUTING.md — duplicates without a research note are closed).
+          required: true
+        - label: I understand features require maintainer approval before implementation — no drive-by feature PRs.
+          required: true
+        - label: This proposal describes a user-facing problem rather than a private implementation task.
+          required: true
